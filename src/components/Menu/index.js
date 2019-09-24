@@ -3,14 +3,29 @@ import React from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import QRCode from "react-native-qrcode";
 
-import { Container, Code, Nav, NavItem, NavText, SignOutButton, SignOutButtonText } from "./styles";
+import {
+  Container,
+  Code,
+  Nav,
+  NavItem,
+  NavText,
+  SignOutButton,
+  SignOutButtonText
+} from "./styles";
 import logo from "../../../assets/Nubank_Logo.png";
 
-export default function Menu() {
+export default function Menu({ translateY }) {
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: translateY.interpolate({
+          inputRange: [0, 150],
+          outputRange: [0, 1]
+        })
+      }}
+    >
       <Code>
-        <QRCode 
+        <QRCode
           value="https://github.com/vitortrimer"
           size={80}
           fgColor="#fff"
@@ -35,7 +50,7 @@ export default function Menu() {
           <NavText>Configurações do app</NavText>
         </NavItem>
       </Nav>
-      
+
       <SignOutButton onPress={() => {}}>
         <SignOutButtonText>Sair do App</SignOutButtonText>
       </SignOutButton>
