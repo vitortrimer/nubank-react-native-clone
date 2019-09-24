@@ -10,6 +10,7 @@ export const TabsContainer = styled.ScrollView.attrs({
   contentcOntainerStyle: { paddingLeft: 10, paddingRight: 20 },
   showsHorizontalScrollIndicator: false
 })``;
+
 export const TabItem = styled.View`
   width: 100px;
   height: 100px;
@@ -19,6 +20,7 @@ export const TabItem = styled.View`
   padding: 10px;
   justify-content: space-between;
 `;
+
 export const TabText = styled.Text`
   font-size: 13px;
   color: #fff;
